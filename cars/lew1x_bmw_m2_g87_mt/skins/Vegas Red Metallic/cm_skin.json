@@ -1,0 +1,71 @@
+{
+  "01CarPaint": {
+    "complex": false,
+    "reflection": 1.0,
+    "gloss": 1.0,
+    "specular": 1.0,
+    "color": "#FF932714",
+    "flakes": 0.777,
+    "enabled": true
+  },
+  "02Rim": {
+    "complex": false,
+    "reflection": 1.0,
+    "gloss": 1.0,
+    "specular": 1.0,
+    "color": "#FF141414",
+    "flakes": 0.777,
+    "enabled": true
+  },
+  "03BrakeCaliper": {
+    "enabled": true,
+    "colors": [
+      "#FF5D00"
+    ]
+  },
+  "04Leather1": {
+    "enabled": false,
+    "colors": [
+      "#1C1C1C"
+    ]
+  },
+  "04Leather2": {
+    "enabled": true,
+    "colors": [
+      "#FF5D00"
+    ]
+  },
+  "05Alcantara1": {
+    "enabled": true,
+    "colors": [
+      "#1C1C1C"
+    ]
+  },
+  "06Stitching1": {
+    "enabled": true,
+    "colors": [
+      "#FF5D00"
+    ]
+  },
+  "08Misc1": {
+    "enabled": false,
+    "colors": [
+      "#1C1C1C"
+    ]
+  },
+  "08Misc2": {
+    "enabled": false,
+    "colors": [
+      "#1C1C1C"
+    ]
+  },
+  "08Misc3": {
+    "enabled": false,
+    "colors": [
+      "#1C1C1C"
+    ]
+  },
+  "licensePlate": {
+    "style": "Europe"
+  }
+}
