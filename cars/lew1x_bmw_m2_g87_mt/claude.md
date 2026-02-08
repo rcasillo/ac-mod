@@ -34,5 +34,11 @@ For technical clarification on parameter syntax or physics engine limitations:
 
 ---
 
+## Physics & Setup Notes
+* **Pickup Ride Height:** This value is only an offset for the car status screen in the setup menu. It does **not** affect physics.
+* **Static Camber (`suspensions.ini`):** The `STATIC_CAMBER` setting is a baseline value. The actual static camber is calculated based on suspension geometry and is displayed in the car status window in-game.
+
+---
+
 ## Build Commands
 * **Data Packing:** Use the `data/` folder for development; pack to `data.acd` only for release.
