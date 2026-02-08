@@ -14,8 +14,9 @@ This directory contains the specific assets and physics data for the **2023 BMW 
 
 ## Research & Data Integrity
 * **Real-World Data Priority:** Always prioritize real-world technical specifications, dyno graphs, and suspension geometry data when making changes to physics files.
+* **Web Research Required:** When specific G87 M2 data is unavailable in local documentation, perform web searches for real-world specifications, tire data, and suspension geometry before making parameter changes.
 * **No Generalizations:** Do not apply generic "M-car" or "Modern BMW" assumptions. Every parameter change must be rooted in data specific to the G87 M2.
-* **Assumption Protocol:** If specific data is unavailable, **do not guess.** Stop and ask for permission before using placeholder values or making engineering assumptions.
+* **Assumption Protocol:** If specific data is unavailable after research, **do not guess.** Stop and ask for permission before using placeholder values or making engineering assumptions.
 
 ---
 
