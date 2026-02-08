@@ -22,4 +22,3 @@ If you require clarification on how specific settings, variables, or physics par
 ## Development Standards
 * **Encoding:** All configuration files must be saved in **UTF-8** (without BOM).
 * **Syntax:** Follow standard AC initialization formatting; ensure all brackets `[]` are properly closed.
-* **Organization:** Keep data replacements in the `extension/` folder where possible to maintain base game integrity.
