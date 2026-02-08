@@ -1,0 +1,104 @@
+{
+  "calipers": {
+    "enabled": false,
+    "colors": [
+      "#8B0000"
+    ]
+  },
+  "carPaint": {
+    "complex": false,
+    "reflection": 1.0,
+    "gloss": 1.0,
+    "specular": 1.0,
+    "color": "#FF0010A8",
+    "flakes": 0.777,
+    "enabled": false
+  },
+  "cloth": {
+    "enabled": false,
+    "colors": [
+      "#2F3344"
+    ]
+  },
+  "interior0": {
+    "enabled": false,
+    "colors": [
+      "#FFFFFF"
+    ]
+  },
+  "interiorPlastic0": {
+    "enabled": false,
+    "colors": [
+      "#1993FF"
+    ]
+  },
+  "leather0": {
+    "enabled": false,
+    "colors": [
+      "#1993FF"
+    ]
+  },
+  "leather1": {
+    "enabled": false,
+    "colors": [
+      "#2F3344"
+    ]
+  },
+  "leather2": {
+    "enabled": false,
+    "colors": [
+      "#1993FF"
+    ]
+  },
+  "leather3": {
+    "enabled": false,
+    "colors": [
+      "#1993FF"
+    ]
+  },
+  "leather4": {
+    "enabled": false,
+    "colors": [
+      "#2F3344"
+    ]
+  },
+  "leatherColored": {
+    "enabled": false,
+    "colors": [
+      "#FFFFFF"
+    ]
+  },
+  "licensePlate": {
+    "style": "Europe"
+  },
+  "rims": {
+    "enabled": true,
+    "colors": [
+      "#FFFFFF"
+    ]
+  },
+  "trimming0": {
+    "enabled": false,
+    "colors": [
+      "#1993FF"
+    ]
+  },
+  "trimming1": {
+    "enabled": false,
+    "colors": [
+      "#1993FF"
+    ]
+  },
+  "trimming2": {
+    "enabled": false,
+    "colors": [
+      "#1993FF"
+    ]
+  },
+  "trimming3": {
+    "enabled": false,
+    "colors": [
+      "#2F3344"
+    ]
+  }
+}

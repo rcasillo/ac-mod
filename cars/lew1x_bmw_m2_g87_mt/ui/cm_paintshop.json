@@ -1,0 +1,80 @@
+{
+  "lew1x_bmw_m2_g87_mt": [
+   { 
+  "type": "carPaint", 
+  "name": "01. M2 Paint",
+  "texture": "metal_detail.dds", 
+  "mapsTexture": "carpaint_map.dds",
+  "mapsAutoLevel": true, 
+  "defaultColor": "#FFFFFF" 
+},
+
+   { 
+  "type": "color", 
+  "name": "02. M2 Rims",
+  "texture": "metal_detail_rim.dds", 
+  "mapsAutoLevel": true, 
+  "defaultColor": "#515151" 
+},
+
+{ 
+  "type": "color",
+  "name": "03. Floor",
+  "texture": "carpet.dds",
+  "autoLevel": true,
+  "defaultColor": "#000000"
+},
+
+{ 
+  "type": "color",
+  "name": "04. Leather",
+  "texture": "leather.dds",
+  "autoLevel": true,
+  "defaultColor": "#FFFFFF"
+},
+
+{ 
+  "type": "color",
+  "name": "05. Second Leather",
+  "texture": "leather_2.dds",
+  "autoLevel": true,
+  "defaultColor": "#FFFFFF"
+},
+
+{ 
+  "type": "color",
+  "name": "06. Seats Alcantara",
+  "texture": "alcnt_seat.dds",
+  "autoLevel": true,
+  "defaultColor": "#FFFFFF"
+},
+
+{ 
+  "type": "color",
+  "name": "07. Alcantara",
+  "texture": "alcnt.dds",
+  "autoLevel": true,
+  "defaultColor": "#FFFFFF"
+},
+
+{ 
+  "type": "color",
+  "name": "08. Carbon",
+  "texture": "carbon.dds",
+  "autoLevel": true,
+  "defaultColor": "#FFFFFF"
+},
+
+{ 
+  "type": "licensePlate", 
+  "name": "10. Plate",
+  "style": "Russia", 
+  "texture": "Plate_D.dds",
+  "normals": "Plate_NM.dds" 
+},
+  ],
+}
+
+
+
+
