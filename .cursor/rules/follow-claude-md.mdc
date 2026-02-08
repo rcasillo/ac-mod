@@ -1,0 +1,18 @@
+---
+description: Always read and follow claude.md files in the project as primary context
+alwaysApply: true
+---
+
+# Follow claude.md Files
+
+When working in this project:
+
+1. **Discover**: At the start of relevant work, check for `claude.md` in the project root and in the directory (or parent directories) of any files you are editing or discussing.
+
+2. **Read**: If a `claude.md` exists, read it before making changes or giving guidance. Treat it as project instructions and documentation.
+
+3. **Follow**: Apply the standards, scope, and guidance in `claude.md` as you would follow dedicated project rules—encoding, syntax, organization, and any references to other docs (e.g. the Assetto Corsa Modding Manual) must be respected.
+
+4. **Scope**: Prefer the nearest `claude.md` (e.g. in the current folder or a parent) when multiple exist; combine or prioritize root-level project context when appropriate.
+
+Do not skip or summarize away instructions in `claude.md`; treat them as authoritative for this project.
