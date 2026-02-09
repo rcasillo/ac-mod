@@ -6,7 +6,8 @@ High-quality car modifications for Assetto Corsa, featuring accurate physics, de
 
 - **BMW M2 G87 MT** - Manual transmission variant with refined physics and handling
 - **Chevrolet Corvette C8** - Mid-engine supercar with authentic performance characteristics
-
+- **Chevrolet Corvette C8 Stingray** - Commissioned by Obungus<br><br>With Z51 package aero parts<br><br>Features: <br><br>Extra A - Interior dome light<br><br>Credits: <br><br>Base model - Gran Turismo 7<br>Sound - Vilau<br><br>Newest CSP recommended
+- **BMW M2 G87 (MT)** - 2023 BMW M2 (G87)
 ## 📦 Downloads
 
 **[📥 View Latest Releases](RELEASES.md)** - Download the newest version of each car
