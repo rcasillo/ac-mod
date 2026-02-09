@@ -1,0 +1,105 @@
+name: Update Release Index
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:  # Allow manual updates
+
+permissions:
+  contents: write
+
+jobs:
+  update-index:
+    name: Update RELEASES.md
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Generate release index
+        run: |
+          # Fetch all releases using GitHub API
+          gh release list --limit 1000 --json tagName,name,publishedAt,url > releases.json
+
+          # Process releases with Python for better JSON handling
+          cat > process_releases.py << 'PYTHON_SCRIPT'
+          import json
+          import sys
+          from datetime import datetime
+          from collections import defaultdict
+
+          # Read releases
+          with open('releases.json', 'r') as f:
+              releases = json.load(f)
+
+          # Group releases by car (tag prefix before the version)
+          car_releases = defaultdict(list)
+
+          for release in releases:
+              tag = release['tagName']
+              # Extract car name from tag (format: car_name/vYYYY.MM.DD-HHMM)
+              if '/' in tag:
+                  car_name = tag.split('/')[0]
+                  car_releases[car_name].append(release)
+
+          # Sort each car's releases by date (newest first)
+          for car in car_releases:
+              car_releases[car].sort(key=lambda x: x['publishedAt'], reverse=True)
+
+          # Generate markdown
+          print("# 🏎️ Latest Releases\n")
+          print("Download the latest version of each car mod below. All releases are compatible with Assetto Corsa with Content Manager.\n")
+          print("| Car | Latest Version | Release Date | Download |")
+          print("|-----|----------------|--------------|----------|")
+
+          # Sort cars alphabetically
+          for car_name in sorted(car_releases.keys()):
+              latest = car_releases[car_name][0]
+
+              # Format car name (replace underscores with spaces, title case)
+              display_name = car_name.replace('_', ' ').title()
+
+              # Parse version from tag
+              version = latest['tagName'].split('/')[-1] if '/' in latest['tagName'] else latest['tagName']
+
+              # Format date
+              pub_date = datetime.fromisoformat(latest['publishedAt'].replace('Z', '+00:00'))
+              date_str = pub_date.strftime('%Y-%m-%d')
+
+              # Create download URL (GitHub releases auto-generate zip assets)
+              download_url = f"{latest['url'].replace('/tag/', '/download/')}/{car_name}_{version}.zip"
+
+              # All releases link (filtered by car name)
+              all_releases_url = f"https://github.com/${{{{ github.repository }}}}/releases?q={car_name}"
+
+              print(f"| **{display_name}** | `{version}` | {date_str} | [⬇️ Download]({download_url}) · [All Versions]({all_releases_url}) |")
+
+          print("\n---")
+          print("\n### Installation\n")
+          print("**Recommended Method:** Drag and drop the downloaded zip file onto Content Manager window.\n")
+          print("**Manual Method:** Extract to `assettocorsa/content/cars/` and pack data in Content Manager.\n")
+          print("\n---")
+          print(f"\n*Last updated: {datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')} • [View All Releases](https://github.com/${{{{ github.repository }}}}/releases)*")
+
+          PYTHON_SCRIPT
+
+          python3 process_releases.py > RELEASES.md
+
+          cat RELEASES.md
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add RELEASES.md
+
+          # Only commit if there are changes
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update release index [skip ci]"
+            git push
+          fi
