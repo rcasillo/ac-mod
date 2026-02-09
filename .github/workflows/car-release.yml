@@ -8,6 +8,9 @@ on:
       - 'cars/**'
   workflow_dispatch:  # Allow manual triggering
 
+permissions:
+  contents: write  # Required to create releases and tags
+
 jobs:
   detect-changes:
     name: Detect Changed Cars
