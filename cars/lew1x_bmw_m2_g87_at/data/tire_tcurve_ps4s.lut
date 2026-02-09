@@ -1,0 +1,29 @@
+; Michelin Pilot Sport 4S Temperature-Grip Curve
+; 300TW Max Performance Summer Tire
+; Optimal range: 65-85C (street tire - works well at moderate temps)
+; Based on real-world data: good cold grip, wide operating window
+; Format: Temperature (C) - Grip Multiplier
+;
+; Street tires have:
+; - Better cold grip than track tires
+; - Lower peak operating temperature
+; - More sensitivity to overheating
+0|0.72
+20|0.84
+40|0.92
+50|0.95
+60|0.98
+65|1.00
+70|1.00
+75|1.00
+80|1.00
+85|1.00
+90|0.99
+95|0.97
+100|0.95
+110|0.91
+120|0.86
+140|0.78
+160|0.68
+200|0.52
+250|0.35

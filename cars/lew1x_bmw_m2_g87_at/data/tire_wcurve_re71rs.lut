@@ -1,0 +1,21 @@
+; Bridgestone Potenza RE-71RS Wear Curve
+; 200TW - Faster wear than street tires but good for class
+; Format: Virtual KM - Grip Percentage
+;
+; 200TW track tire wear characteristics:
+; - Brief break-in period
+; - Grip actually improves slightly after scrubbing
+; - Faster degradation than street tires
+; - Still respectable longevity for a 200TW tire
+0|98
+0.3|99
+0.8|100
+2|100
+5|99.5
+10|99
+20|97.5
+35|95
+50|92
+70|87
+90|81
+110|73
