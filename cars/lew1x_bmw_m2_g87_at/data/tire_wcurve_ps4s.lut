@@ -1,0 +1,22 @@
+; Michelin Pilot Sport 4S Wear Curve
+; 300TW - Good treadwear for a max performance summer tire
+; 30,000 mile warranty - durable compound
+; Format: Virtual KM - Grip Percentage
+;
+; Street tires wear characteristics:
+; - Gradual break-in (scrubbing)
+; - Long stable plateau
+; - Slow degradation until very worn
+0|100
+0.5|100
+1|100
+3|100
+8|99.5
+15|99
+30|98
+50|96.5
+75|94
+100|91
+130|86
+160|80
+200|72
