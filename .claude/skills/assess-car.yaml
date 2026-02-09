@@ -1,5 +1,6 @@
 name: assess-car
 description: Perform comprehensive assessment of a car mod's configuration files and LUT tables
+invocable: true
 
 prompt: |
   You are performing a comprehensive technical assessment of an Assetto Corsa car mod.
