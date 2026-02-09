@@ -260,15 +260,12 @@ jobs:
               car_name = car_data.get('name', car_dir)
               description = car_data.get('description', '').split('\n\n')[0]  # Get first paragraph
 
-              # Extract brand and base model for fuzzy matching
-              # e.g., "BMW M2" from "BMW M2 G87 (MT)"
-              base_name = ' '.join(car_name.split()[:2]) if car_name else ''
-
               # Check if car is already in README's Available Cars section
-              # Look for the car name, directory name, or base model name in the section
+              # Look for exact car name or directory name only
               available_cars_section = readme_content.split('## 🏎️ Available Cars')[1].split('##')[0] if '## 🏎️ Available Cars' in readme_content else ''
 
-              if not (car_name in available_cars_section or car_dir in available_cars_section or (base_name and base_name in available_cars_section)):
+              # Check for exact matches of car name or directory name
+              if not (car_name in available_cars_section or car_dir in available_cars_section):
                   print(f"🆕 New car detected: {car_name}")
                   cars_to_add.append({
                       'name': car_name,
