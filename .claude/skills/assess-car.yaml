@@ -1,0 +1,110 @@
+name: assess-car
+description: Perform comprehensive assessment of a car mod's configuration files and LUT tables
+
+prompt: |
+  You are performing a comprehensive technical assessment of an Assetto Corsa car mod.
+
+  ## Your Task
+
+  Analyze all configuration files (.ini) and lookup tables (.lut) in the car's data folder and assess their technical accuracy, consistency, and potential issues.
+
+  ## Assessment Process
+
+  1. **Identify the Car**
+     - If a car directory is provided as an argument, use that
+     - Otherwise, work with the current directory (must be a car folder)
+     - Read the car's claude.md file if it exists for context about specifications
+
+  2. **Inventory Configuration Files**
+     - List all .ini files in the data/ folder
+     - List all .lut files in the data/ folder
+     - Identify which files are present and which standard AC files might be missing
+
+  3. **Analyze Each Configuration File**
+     For each .ini file, examine:
+     - **Parameter values**: Check if they seem realistic for the car type
+     - **Consistency**: Cross-reference related parameters (e.g., weight distribution, suspension geometry)
+     - **Common issues**: Look for placeholder values, unrealistic numbers, or obvious errors
+     - **Missing sections**: Identify any standard sections that are absent
+
+     Reference the ASSETTO CORSA MODDING MANUAL for:
+     - Parameter definitions and valid ranges
+     - Required vs optional parameters
+     - Best practices and recommendations
+
+  4. **Analyze Lookup Tables (.lut files)**
+     For each .lut file, examine:
+     - **Data format**: Verify proper formatting (two columns, appropriate ranges)
+     - **Curve shape**: Check if the curve makes sense (smooth progression, no erratic jumps)
+     - **Realistic values**: Ensure values are appropriate for the car type
+     - **Key points**: Verify critical points (e.g., peak torque/power RPM, tire grip at different slip angles)
+
+  5. **Cross-Reference Analysis**
+     Check consistency across files:
+     - Does the weight in car.ini match suspension load specifications?
+     - Do gear ratios make sense with the engine's power band?
+     - Are tire dimensions consistent between tyres.ini and model files?
+     - Does aero balance align with weight distribution?
+
+  6. **Prepare Assessment Report**
+     Create a structured report with:
+
+     **A. Summary**
+     - Overall assessment (Good / Needs Attention / Critical Issues)
+     - Car identification and specifications
+     - Files analyzed count
+
+     **B. Critical Issues** (if any)
+     - Parameters that are clearly wrong or will cause problems
+     - Missing required files or sections
+     - Values that break AC physics engine limitations
+
+     **C. Recommendations** (prioritized)
+     - High priority: Issues affecting physics accuracy or drivability
+     - Medium priority: Improvements for realism or consistency
+     - Low priority: Optional optimizations or enhancements
+
+     **D. Detailed Findings by File**
+     For each file, document:
+     - Sections analyzed
+     - Notable parameters and their assessment
+     - Specific concerns or questions
+     - Suggested changes (if any)
+
+  7. **Propose Changes**
+     For any issues found, prepare specific change proposals:
+     - Show current value and proposed new value
+     - Explain the reasoning for each change
+     - Provide source/justification (real-world data, physics principles, modding manual)
+     - Mark urgency level (Critical / Recommended / Optional)
+
+  ## Important Guidelines
+
+  - **Research First**: When you're uncertain about specifications, search for real-world data
+  - **Reference Documentation**: Cite the modding manual for parameter explanations
+  - **Be Specific**: Provide exact file names, line numbers, and parameter names
+  - **Explain Reasoning**: Always explain WHY a change is suggested
+  - **No Assumptions**: If real-world data isn't available, note it as "needs research" rather than guessing
+  - **Respect Existing Work**: Acknowledge what's done well, not just problems
+
+  ## After Assessment
+
+  1. Present the complete assessment report
+  2. Ask the user if they want to:
+     - Review specific sections in detail
+     - Make the proposed changes
+     - Research specific parameters further
+     - Export the report to a file
+
+  3. If user approves changes:
+     - Use EnterPlanMode to create an implementation plan
+     - Make changes systematically, file by file
+     - Commit changes with clear, descriptive commit message
+
+  ## Example Usage
+
+  User might invoke this as:
+  - `/assess-car` (assess current directory)
+  - `/assess-car cars/lew1x_bmw_m2_g87_mt` (assess specific car)
+
+  Begin by confirming which car to assess and then proceed with the analysis.
