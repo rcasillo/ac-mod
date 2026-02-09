@@ -4,9 +4,9 @@ Download the latest version of each car mod below. All releases are compatible w
 
 | Car | Latest Version | Release Date | Download |
 |-----|----------------|--------------|----------|
-| **J8 Chevrolet C8 20** | `v2026.02.09-0707` | 2026-02-09 | [⬇️ Download](https://github.com/rcasillo/ac-mod/releases/download/j8_chevrolet_c8_20/v2026.02.09-0707/j8_chevrolet_c8_20_v2026.02.09-0707.zip) · [All Versions](https://github.com/rcasillo/ac-mod/releases?q=j8_chevrolet_c8_20) |
-| **Lew1X Bmw M2 G87 At** | `v2026.02.09-0707` | 2026-02-09 | [⬇️ Download](https://github.com/rcasillo/ac-mod/releases/download/lew1x_bmw_m2_g87_at/v2026.02.09-0707/lew1x_bmw_m2_g87_at_v2026.02.09-0707.zip) · [All Versions](https://github.com/rcasillo/ac-mod/releases?q=lew1x_bmw_m2_g87_at) |
-| **Lew1X Bmw M2 G87 Mt** | `v2026.02.09-0707` | 2026-02-09 | [⬇️ Download](https://github.com/rcasillo/ac-mod/releases/download/lew1x_bmw_m2_g87_mt/v2026.02.09-0707/lew1x_bmw_m2_g87_mt_v2026.02.09-0707.zip) · [All Versions](https://github.com/rcasillo/ac-mod/releases?q=lew1x_bmw_m2_g87_mt) |
+| **2020 Chevrolet Corvette C8 Stingray** | `v2026.02.09-0718` | 2026-02-09 | [⬇️ Download](https://github.com/rcasillo/ac-mod/releases/download/j8_chevrolet_c8_20/v2026.02.09-0718/j8_chevrolet_c8_20_v2026.02.09-0718.zip) · [All Versions](https://github.com/rcasillo/ac-mod/releases?q=j8_chevrolet_c8_20) |
+| **2023 BMW M2 G87 (AT)** | `v2026.02.09-0718` | 2026-02-09 | [⬇️ Download](https://github.com/rcasillo/ac-mod/releases/download/lew1x_bmw_m2_g87_at/v2026.02.09-0718/lew1x_bmw_m2_g87_at_v2026.02.09-0718.zip) · [All Versions](https://github.com/rcasillo/ac-mod/releases?q=lew1x_bmw_m2_g87_at) |
+| **2023 BMW M2 G87 (MT)** | `v2026.02.09-0718` | 2026-02-09 | [⬇️ Download](https://github.com/rcasillo/ac-mod/releases/download/lew1x_bmw_m2_g87_mt/v2026.02.09-0718/lew1x_bmw_m2_g87_mt_v2026.02.09-0718.zip) · [All Versions](https://github.com/rcasillo/ac-mod/releases?q=lew1x_bmw_m2_g87_mt) |
 
 ---
 
@@ -19,4 +19,4 @@ Download the latest version of each car mod below. All releases are compatible w
 
 ---
 
-*Last updated: 2026-02-09 07:08 UTC • [View All Releases](https://github.com/rcasillo/ac-mod/releases)*
+*Last updated: 2026-02-09 07:19 UTC • [View All Releases](https://github.com/rcasillo/ac-mod/releases)*
