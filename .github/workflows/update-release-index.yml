@@ -142,11 +142,22 @@ jobs:
               display_name = f"{car_year} {car_name}" if car_year else car_name
 
               # Check if car is already in README's Available Cars section
-              # Look for display name or directory name only
               available_cars_section = readme_content.split('## 🏎️ Available Cars')[1].split('##')[0] if '## 🏎️ Available Cars' in readme_content else ''
 
-              # Check for exact matches of display name or directory name
-              if not (display_name in available_cars_section or car_dir in available_cars_section):
+              # Check if car name appears in any existing entry (more flexible matching)
+              # Look for the base car name (e.g., "BMW M2 G87" from "BMW M2 G87 (AT)")
+              base_car_name = car_name.replace(' (AT)', '').replace(' (MT)', '').strip()
+
+              # Check for matches - look for base name AND transmission variant
+              already_exists = False
+              for line in available_cars_section.split('\n'):
+                  if line.strip().startswith('- **'):
+                      # Check if this line contains the base car name and the variant
+                      if base_car_name in line and (('AT' in car_name and 'AT' in line) or ('MT' in car_name and 'MT' in line)):
+                          already_exists = True
+                          break
+
+              if not already_exists:
                   print(f"🆕 New car detected: {display_name}")
                   cars_to_add.append({
                       'name': display_name,
