@@ -4,9 +4,9 @@ High-quality car modifications for Assetto Corsa, featuring accurate physics, de
 
 ## 🏎️ Available Cars
 
-- **BMW M2 G87 (AT)** - 2023 BMW M2 (G87) compact high-performance coupe with S58 twin-turbo inline-six and ZF 8-speed automatic transmission
-- **BMW M2 G87 (MT)** - 2023 BMW M2 (G87) compact high-performance coupe with S58 twin-turbo inline-six and 6-speed manual transmission
-- **Chevrolet Corvette C8 Stingray** - Mid-engine American supercar with Z51 package aero parts and Extra A interior dome light
+- **2020 Chevrolet Corvette C8 Stingray** - Mid-engine American supercar with Z51 package aero parts and Extra A interior dome light
+- **2023 BMW M2 (G87) AT** - Compact high-performance coupe with S58 twin-turbo inline-six and ZF 8-speed automatic transmission
+- **2023 BMW M2 (G87) MT** - Compact high-performance coupe with S58 twin-turbo inline-six and 6-speed manual transmission
 
 ## 📦 Downloads
 
