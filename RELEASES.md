@@ -2,7 +2,10 @@
 
 Download the latest version of each car mod below. All releases are compatible with Assetto Corsa with Content Manager.
 
-*No releases published yet. This file will be automatically updated when the first car release is created.*
+| Car | Latest Version | Release Date | Download |
+|-----|----------------|--------------|----------|
+| **J8 Chevrolet C8 20** | `v2026.02.09-0558` | 2026-02-09 | [⬇️ Download](https://github.com/rcasillo/ac-mod/releases/download/j8_chevrolet_c8_20/v2026.02.09-0558/j8_chevrolet_c8_20_v2026.02.09-0558.zip) · [All Versions](https://github.com/rcasillo/ac-mod/releases?q=j8_chevrolet_c8_20) |
+| **Lew1X Bmw M2 G87 Mt** | `v2026.02.09-0558` | 2026-02-09 | [⬇️ Download](https://github.com/rcasillo/ac-mod/releases/download/lew1x_bmw_m2_g87_mt/v2026.02.09-0558/lew1x_bmw_m2_g87_mt_v2026.02.09-0558.zip) · [All Versions](https://github.com/rcasillo/ac-mod/releases?q=lew1x_bmw_m2_g87_mt) |
 
 ---
 
@@ -12,6 +15,7 @@ Download the latest version of each car mod below. All releases are compatible w
 
 **Manual Method:** Extract to `assettocorsa/content/cars/` and pack data in Content Manager.
 
+
 ---
 
-*This file is automatically updated by GitHub Actions • [View All Releases](https://github.com/rcasillo/ac-mod/releases)*
+*Last updated: 2026-02-09 05:59 UTC • [View All Releases](https://github.com/rcasillo/ac-mod/releases)*
