@@ -19,7 +19,7 @@ jobs:
       - name: Generate release index
         run: |
           # Fetch all releases using GitHub API
-          gh release list --limit 1000 --json tagName,name,publishedAt,url > releases.json
+          gh release list --limit 1000 --json tagName,name,publishedAt > releases.json
 
           # Process releases with Python for better JSON handling
           cat > process_releases.py << 'PYTHON_SCRIPT'
@@ -70,10 +70,9 @@ jobs:
               pub_date = datetime.fromisoformat(latest['publishedAt'].replace('Z', '+00:00'))
               date_str = pub_date.strftime('%Y-%m-%d')
 
-              # Create download URL (GitHub releases auto-generate zip assets)
-              download_url = f"{latest['url'].replace('/tag/', '/download/')}/{car_name}_{version}.zip"
-
-              # All releases link (filtered by car name)
+              # Construct URLs from repo name and tag
+              tag_name = latest['tagName']
+              download_url = f"https://github.com/{repo_name}/releases/download/{tag_name}/{car_name}_{version}.zip"
               all_releases_url = f"https://github.com/{repo_name}/releases?q={car_name}"
 
               print(f"| **{display_name}** | `{version}` | {date_str} | [⬇️ Download]({download_url}) · [All Versions]({all_releases_url}) |")
