@@ -323,12 +323,38 @@ jobs:
 
           if git diff --staged --quiet; then
             echo "No changes to commit"
+            exit 0
+          fi
+
+          # Commit the changes
+          git commit -m "Update release index and README [skip ci]"
+
+          # Fetch latest changes and handle conflicts
+          git fetch origin main
+
+          # Try to rebase
+          if ! git rebase origin/main; then
+            echo "⚠️  Rebase conflict detected. Regenerating files from latest main..."
+
+            # Abort the failed rebase
+            git rebase --abort
+
+            # Checkout latest main
+            git checkout origin/main
+
+            # Re-run the generation scripts on fresh main
+            gh release list --limit 1000 --json tagName,name,publishedAt > releases.json
+            python3 process_releases.py > RELEASES.md
+            python3 update_readme.py
+
+            # Commit the regenerated files
+            git checkout -b temp-update-branch
+            git add RELEASES.md README.md
+            git commit -m "Update release index and README [skip ci]" || echo "No changes after regeneration"
+
+            # Force push to main (safe because these are generated files)
+            git push origin temp-update-branch:main
           else
-            git commit -m "Update release index and README [skip ci]"
-
-            # Pull with rebase in case there are new commits
-            git pull --rebase origin main || true
-
-            # Push changes
-            git push
+            # Rebase succeeded, push normally
+            git push origin HEAD:main
           fi
