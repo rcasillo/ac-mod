@@ -226,16 +226,102 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GITHUB_REPOSITORY: ${{ github.repository }}
 
-      - name: Commit and push release index
+      - name: Update README with new cars
+        run: |
+          # Find all car directories and check if they're in README
+          cat > update_readme.py << 'PYTHON_SCRIPT'
+          import json
+          import os
+          import re
+          from pathlib import Path
+
+          # Read current README
+          with open('README.md', 'r', encoding='utf-8') as f:
+              readme_content = f.read()
+
+          # Find all car directories
+          cars_dir = Path('cars')
+          car_dirs = [d.name for d in cars_dir.iterdir() if d.is_dir()]
+
+          # Track if we need to update
+          cars_to_add = []
+
+          for car_dir in sorted(car_dirs):
+              ui_json_path = cars_dir / car_dir / 'ui' / 'ui_car.json'
+
+              if not ui_json_path.exists():
+                  print(f"⚠️  No ui_car.json found for {car_dir}, skipping")
+                  continue
+
+              # Read car metadata
+              with open(ui_json_path, 'r', encoding='utf-8') as f:
+                  car_data = json.load(f)
+
+              car_name = car_data.get('name', car_dir)
+              description = car_data.get('description', '').split('\n\n')[0]  # Get first paragraph
+
+              # Check if car is already in README (search for the car name)
+              if car_name not in readme_content and car_dir not in readme_content:
+                  print(f"🆕 New car detected: {car_name}")
+                  cars_to_add.append({
+                      'name': car_name,
+                      'description': description
+                  })
+
+          if cars_to_add:
+              # Find the "Available Cars" section and update it
+              # Look for the pattern between "## 🏎️ Available Cars" and the next "##"
+              pattern = r'(## 🏎️ Available Cars\n\n)(.*?)(\n## )'
+
+              def replace_cars_section(match):
+                  header = match.group(1)
+                  current_content = match.group(2)
+                  next_section = match.group(3)
+
+                  # Parse existing cars
+                  existing_cars = []
+                  for line in current_content.strip().split('\n'):
+                      if line.startswith('- **'):
+                          existing_cars.append(line)
+
+                  # Add new cars
+                  for car in cars_to_add:
+                      car_line = f"- **{car['name']}** - {car['description']}"
+                      existing_cars.append(car_line)
+
+                  # Reconstruct section
+                  new_content = '\n'.join(existing_cars)
+                  return f"{header}{new_content}{next_section}"
+
+              readme_content = re.sub(pattern, replace_cars_section, readme_content, flags=re.DOTALL)
+
+              # Write updated README
+              with open('README.md', 'w', encoding='utf-8') as f:
+                  f.write(readme_content)
+
+              print(f"✅ Added {len(cars_to_add)} new car(s) to README")
+          else:
+              print("✅ README is up to date")
+
+          PYTHON_SCRIPT
+
+          python3 update_readme.py
+
+      - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add RELEASES.md
+          git add RELEASES.md README.md
 
           if git diff --staged --quiet; then
-            echo "No changes to RELEASES.md"
+            echo "No changes to commit"
           else
-            git commit -m "Update release index [skip ci]"
+            git commit -m "Update release index and README [skip ci]"
+
+            # Pull with rebase in case there are new commits
+            git pull --rebase origin main || true
+
+            # Push changes
             git push
           fi
