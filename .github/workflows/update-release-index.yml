@@ -60,8 +60,18 @@ jobs:
           for car_name in sorted(car_releases.keys()):
               latest = car_releases[car_name][0]
 
-              # Format car name (replace underscores with spaces, title case)
-              display_name = car_name.replace('_', ' ').title()
+              # Read ui_car.json to get proper display name with year
+              ui_json_path = f'cars/{car_name}/ui/ui_car.json'
+              display_name = car_name.replace('_', ' ').title()  # fallback
+              try:
+                  with open(ui_json_path, 'r', encoding='utf-8') as f:
+                      ui_data = json.load(f)
+                      car_title = ui_data.get('name', display_name)
+                      car_year = ui_data.get('year', '')
+                      # Format as "Year Name" for display
+                      display_name = f"{car_year} {car_title}" if car_year else car_title
+              except:
+                  pass  # Use fallback if ui_car.json doesn't exist
 
               # Parse version from tag
               version = latest['tagName'].split('/')[-1] if '/' in latest['tagName'] else latest['tagName']
@@ -125,17 +135,21 @@ jobs:
                   car_data = json.load(f)
 
               car_name = car_data.get('name', car_dir)
+              car_year = car_data.get('year', '')
               description = car_data.get('description', '').split('\n\n')[0]  # Get first paragraph
 
+              # Format display name as "Year Name" for GitHub display
+              display_name = f"{car_year} {car_name}" if car_year else car_name
+
               # Check if car is already in README's Available Cars section
-              # Look for exact car name or directory name only
+              # Look for display name or directory name only
               available_cars_section = readme_content.split('## 🏎️ Available Cars')[1].split('##')[0] if '## 🏎️ Available Cars' in readme_content else ''
 
-              # Check for exact matches of car name or directory name
-              if not (car_name in available_cars_section or car_dir in available_cars_section):
-                  print(f"🆕 New car detected: {car_name}")
+              # Check for exact matches of display name or directory name
+              if not (display_name in available_cars_section or car_dir in available_cars_section):
+                  print(f"🆕 New car detected: {display_name}")
                   cars_to_add.append({
-                      'name': car_name,
+                      'name': display_name,
                       'description': description
                   })
 
