@@ -148,14 +148,23 @@ jobs:
               # Look for the base car name (e.g., "BMW M2 G87" from "BMW M2 G87 (AT)")
               base_car_name = car_name.replace(' (AT)', '').replace(' (MT)', '').strip()
 
-              # Check for matches - look for base name AND transmission variant
+              # Check for matches - look for base name AND transmission variant (if applicable)
               already_exists = False
+              has_transmission_variant = '(AT)' in car_name or '(MT)' in car_name
+
               for line in available_cars_section.split('\n'):
                   if line.strip().startswith('- **'):
-                      # Check if this line contains the base car name and the variant
-                      if base_car_name in line and (('AT' in car_name and 'AT' in line) or ('MT' in car_name and 'MT' in line)):
-                          already_exists = True
-                          break
+                      # For cars with transmission variants, check both base name and variant
+                      if has_transmission_variant:
+                          if base_car_name in line and (('(AT)' in car_name and '(AT)' in line) or ('(MT)' in car_name and '(MT)' in line)):
+                              already_exists = True
+                              break
+                      # For cars without variants, just check if the full name is in the line
+                      else:
+                          # Use display_name to check for exact match with year
+                          if display_name in line:
+                              already_exists = True
+                              break
 
               if not already_exists:
                   print(f"🆕 New car detected: {display_name}")
