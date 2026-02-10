@@ -1,0 +1,25 @@
+; Bridgestone Potenza RE-71RS Temperature-Grip Curve
+; 200TW Extreme Performance Summer - Track Tire
+; Per Bridgestone engineer: optimal 120-130F (49-54C), safe to 160F (71C)
+; AC measures closer to core temp - adjust for surface being hotter
+; Optimal core temp window: 45-65C
+; Cold penalty is significant - needs warmup laps
+; Format: Temperature (C) then Grip Multiplier
+0|0.68
+20|0.75
+40|0.83
+50|0.88
+60|0.93
+70|0.97
+80|1.00
+85|1.00
+90|1.00
+95|1.00
+100|1.00
+105|1.00
+110|0.99
+120|0.97
+140|0.92
+160|0.85
+200|0.68
+250|0.45

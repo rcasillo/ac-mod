@@ -41,17 +41,27 @@ If you require clarification on how specific settings, variables, or physics par
   * Multiple sentences with `<br>` tags
   * Marketing copy or flowery language
 
-### README Maintenance
-* **NEVER manually add duplicate entries** - Always check if a car already exists in the Available Cars section before adding
-* **Check for base model variants** - Cars like "M2 G87 (AT)" and "M2 G87 (MT)" share a base model; don't duplicate the base entry
-* **Match the description** from `ui_car.json` exactly when adding cars manually
-* **Automated workflow handles updates** - The GitHub Actions workflow automatically adds new cars from `ui_car.json`, so manual updates should be minimal
+### README Maintenance (AUTOMATED - DO NOT EDIT MANUALLY)
+
+**CRITICAL:** The README.md car list in the "Available Cars" section is **automatically managed** by GitHub Actions. The workflow:
+* Scans all `ui_car.json` files in the `cars/` directory
+* Automatically adds any new cars to the README
+* **Deduplicates entries** - removes any duplicate cars that may have been manually added
+* **Sorts alphabetically** - maintains consistent ordering by year then name
+* Runs on every release and can be triggered manually
+
+**DO NOT manually add cars to the README.md "Available Cars" section.** The workflow will:1. Detect the car from `ui_car.json`
+2. Add it automatically on the next release
+3. Remove any duplicate entries you may have added
+4. Re-sort the list alphabetically
+
+**Exception:** If you need to manually edit a car's description in the README, you MUST also update it in the corresponding `ui_car.json` file, otherwise the workflow will overwrite your manual edit on the next run.
 
 ### When Adding New Cars
-1. Create a SHORT description in `ui_car.json` (10-15 words max)
-2. Verify the car doesn't already exist in README.md
-3. If manually adding to README, use alphabetical order by year then name
-4. Use the format: `- **YEAR Name (Variant)** - Short description from ui_car.json`
+1. Create the car with a SHORT description in `ui_car.json` (10-15 words max)
+2. **DO NOT manually add to README.md** - let the automated workflow handle it
+3. The workflow will add it on the next release with format: `- **YEAR Name (Variant)** - Description from ui_car.json`
+4. If duplicates appear, they will be automatically removed on the next workflow run
 
 ---
 
