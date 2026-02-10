@@ -8,8 +8,6 @@ High-quality car modifications for Assetto Corsa, featuring accurate physics, de
 - **2020 Chevrolet Corvette C8 Stingray** - Mid-engine American supercar with Z51 package aero parts and Extra A interior dome light
 - **2023 BMW M2 G87 (AT)** - Compact high-performance coupe with S58 twin-turbo inline-six and ZF 8-speed automatic transmission
 - **2023 BMW M2 G87 (MT)** - Compact high-performance coupe with S58 twin-turbo inline-six and 6-speed manual transmission
-- **2020 BMW M340i X-Drive (G20)** - The BMW M340i xDrive is a high-performance sports sedan that was part of the BMW 3 Series lineup<br><br>the 2021 BMW M340i xDrive is a well-rounded sports sedan that combines powerful performance, precise handling, a luxurious interior, and modern technology. It caters to enthusiasts who seek a balance between performance and everyday practicality in a high-end sedan.<br><br>The 2021 BMW M340i xDrive is equipped with a turbocharged 3.0-liter inline-six engine, producing a powerful output of around 382 horsepower and 500 nm of torque. This engine is mated to an 8-speed automatic transmission and the xDrive all-wheel-drive system, providing impressive acceleration and traction. The performance figures allow the M340i to accelerate from 0 to 100 kph in just over four seconds.
-- **2020 Chevrolet Corvette C8 Stingray** - Mid-engine American supercar with Z51 package aero parts and Extra A interior dome light
 ## 📦 Downloads
 
 **[📥 View Latest Releases](RELEASES.md)** - Download the newest version of each car
