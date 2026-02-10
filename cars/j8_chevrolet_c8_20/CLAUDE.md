@@ -55,7 +55,6 @@ This directory contains the specific assets and physics data for the **2020 Chev
 
 ### Tires (`tyres.ini`)
 * **Last Updated:** 2026-02-09
-* Ported from BMW M2 G87 tire model
 * **Compound 0:** Michelin Pilot Sport 4S (300TW) - street performance
 * **Compound 1 (default):** Bridgestone Potenza RE-71RS (200TW) - track-focused
 * Staggered setup: 245/35R19 front, 305/30R20 rear
