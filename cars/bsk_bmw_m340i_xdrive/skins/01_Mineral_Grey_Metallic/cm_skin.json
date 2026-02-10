@@ -1,0 +1,133 @@
+{
+  "carpaintCustomCarbon2": {
+    "enabled": false,
+    "value": "carbon"
+  },
+  "carpaintCustomCarbon3": {
+    "enabled": false,
+    "value": "carbon"
+  },
+  "carpaintCustomCarbonBody": {
+    "enabled": false,
+    "value": "carbon"
+  },
+  "carpaintCustomCarbonRoof": {
+    "enabled": false,
+    "value": "carbon"
+  },
+  "customCarbonRims": {
+    "enabled": false,
+    "value": "carbon"
+  },
+  "exteriorBmwPaint": {
+    "complex": false,
+    "reflection": 1.0,
+    "gloss": 1.0,
+    "specular": 1.0,
+    "color": "#FFFFFFFF",
+    "flakes": 0.777,
+    "enabled": false
+  },
+  "exteriorCalipers": {
+    "complex": false,
+    "reflection": 1.0,
+    "gloss": 1.0,
+    "specular": 1.0,
+    "color": "#FF2551BA",
+    "flakes": 0.777,
+    "enabled": true
+  },
+  "exteriorRims2": {
+    "enabled": true,
+    "colors": [
+      "#111111"
+    ]
+  },
+  "exteriorRoof": {
+    "enabled": false,
+    "colors": [
+      "#9E1C1C"
+    ]
+  },
+  "exteriorStripe": {
+    "enabled": true,
+    "colors": [
+      "#9E1C1C"
+    ]
+  },
+  "interiorBadges": {
+    "enabled": false,
+    "colors": [
+      "#9E1C1C"
+    ]
+  },
+  "interiorCarbon": {
+    "enabled": false,
+    "colors": [
+      "#9E1C1C"
+    ]
+  },
+  "interiorCarpet": {
+    "enabled": false,
+    "colors": [
+      "#FFFFFF"
+    ]
+  },
+  "interiorChromeDetail": {
+    "enabled": false,
+    "colors": [
+      "#FFFFFF"
+    ]
+  },
+  "interiorLeatherDash": {
+    "enabled": false,
+    "colors": [
+      "#FFFFFF"
+    ]
+  },
+  "interiorLeatherDoor": {
+    "enabled": true,
+    "colors": [
+      "#232323"
+    ]
+  },
+  "interiorLeatherSeats": {
+    "enabled": true,
+    "colors": [
+      "#AF1B18"
+    ]
+  },
+  "interiorLeatherSeats2": {
+    "enabled": true,
+    "colors": [
+      "#4366B7"
+    ]
+  },
+  "interiorLeatherSeats3": {
+    "enabled": false,
+    "colors": [
+      "#FFFFFF"
+    ]
+  },
+  "interiorSeats": {
+    "enabled": false,
+    "value": "tanSquares"
+  },
+  "interiorSeats2": {
+    "enabled": false,
+    "value": "tanSquares"
+  },
+  "interiorSeatsColor": {
+    "enabled": false,
+    "value": "tanSquares"
+  },
+  "interiorStitchColor": {
+    "enabled": true,
+    "colors": [
+      "#FFFFFF"
+    ]
+  },
+  "licensePlate": {
+    "style": "Europe"
+  }
+}

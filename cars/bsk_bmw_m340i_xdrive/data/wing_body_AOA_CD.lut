@@ -1,0 +1,19 @@
+; BMW M340i xDrive G20 body drag coefficient
+; Cd = 0.26 at 0 degrees AOA (official BMW specification)
+; Increases with angle of attack due to increased frontal projection
+-10|0.42
+-8|0.38
+-6|0.34
+-4|0.30
+-2|0.27
+0|0.26
+2|0.27
+4|0.30
+6|0.34
+8|0.38
+10|0.42
+12|0.48
+14|0.55
+16|0.63
+18|0.72
+20|0.82

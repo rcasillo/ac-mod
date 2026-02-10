@@ -1,0 +1,110 @@
+{
+  "01M2_paint": {
+    "complex": false,
+    "reflection": 1.0,
+    "gloss": 1.0,
+    "specular": 1.0,
+    "color": "#FF9F2F00",
+    "flakes": 0.777,
+    "enabled": true
+  },
+  "02Rims": {
+    "complex": false,
+    "reflection": 1.0,
+    "gloss": 1.0,
+    "specular": 1.0,
+    "color": "#FF000000",
+    "flakes": 0.777,
+    "enabled": true
+  },
+  "03Caliper": {
+    "enabled": true,
+    "colors": [
+      "#DDDDDD"
+    ]
+  },
+  "04Crossbar": {
+    "enabled": true,
+    "colors": [
+      "#A62604"
+    ]
+  },
+  "05Stitching": {
+    "enabled": false,
+    "colors": [
+      "#FFFFFF"
+    ]
+  },
+  "06Floor": {
+    "enabled": false,
+    "colors": [
+      "#000000"
+    ]
+  },
+  "07SteerColor": {
+    "enabled": false,
+    "colors": [
+      "#FFFFFF"
+    ]
+  },
+  "08LeatherDashboard": {
+    "enabled": false,
+    "colors": [
+      "#FFFFFF"
+    ]
+  },
+  "09LeatherOuterDoorCards": {
+    "enabled": false,
+    "colors": [
+      "#FFFFFF"
+    ]
+  },
+  "10AlcantaraInnerDoorCards": {
+    "enabled": false,
+    "colors": [
+      "#FFFFFF"
+    ]
+  },
+  "11LeatherSeatsOuter": {
+    "enabled": true,
+    "colors": [
+      "#9F2F00"
+    ]
+  },
+  "12LeatherSeatsInner": {
+    "enabled": false,
+    "colors": [
+      "#FFFFFF"
+    ]
+  },
+  "13Plate": {
+    "style": "Europe"
+  },
+  "14Windows": {
+    "alpha": 0.0,
+    "enabled": false,
+    "colors": [
+      "#293437"
+    ]
+  },
+  "15Headlights": {
+    "alpha": 0.0,
+    "enabled": false,
+    "colors": [
+      "#293437"
+    ]
+  },
+  "16Taillights": {
+    "alpha": 0.0,
+    "enabled": false,
+    "colors": [
+      "#293437"
+    ]
+  },
+  "17EngineCover": {
+    "enabled": false,
+    "colors": [
+      "#262626"
+    ]
+  }
+}

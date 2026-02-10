@@ -1,0 +1,30 @@
+; Michelin Pilot Sport 4S - Temperature Performance Curve
+; Based on real-world data: UHP summer tire
+; Optimal range: 70-90°C (works well from relatively cold)
+; Street tire compound - wide usable range, lower peak than track tires
+; Degrades significantly above 100°C (grease), limited below 10°C
+;
+; Format: Temperature (°C) - Grip Multiplier
+0|0.70
+10|0.78
+20|0.85
+30|0.90
+40|0.94
+50|0.97
+60|0.99
+70|1.00
+75|1.00
+80|1.00
+85|1.00
+90|1.00
+95|0.99
+100|0.97
+105|0.95
+110|0.92
+120|0.87
+130|0.82
+140|0.76
+160|0.68
+180|0.58
+200|0.48
+250|0.30

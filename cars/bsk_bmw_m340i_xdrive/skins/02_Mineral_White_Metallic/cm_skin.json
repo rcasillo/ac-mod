@@ -1,0 +1,20 @@
+{
+  "carPaint": {
+    "color": "#FFFFFFFF",
+    "flakes": 0.777,
+    "enabled": true
+  },
+  "leather": {
+    "enabled": false,
+    "colors": [
+      "#FFFFFF"
+    ]
+  },
+  "licensePlate": {
+    "style": "Europe",
+    "paramCountry": "Netherlands",
+    "paramPrefix": "NA",
+    "paramNumber": "260",
+    "paramPostfix": "71"
+  }
+}
