@@ -26,6 +26,35 @@ If you require clarification on how specific settings, variables, or physics par
 
 ---
 
+## README and Car Metadata Guidelines
+
+**IMPORTANT:** The repository README and release automation depend on concise, consistent car descriptions.
+
+### ui_car.json Description Field
+* **Keep descriptions SHORT** - Maximum 10-15 words (one sentence)
+* **Focus on key characteristics:** engine type, drivetrain, notable features
+* **Good examples:**
+  * `"High-performance sports sedan with B58 3.0L turbocharged inline-six and xDrive AWD"`
+  * `"Mid-engine American supercar with Z51 package aero parts and Extra A interior dome light"`
+* **BAD examples:**
+  * Long paragraphs describing history, features, and specifications
+  * Multiple sentences with `<br>` tags
+  * Marketing copy or flowery language
+
+### README Maintenance
+* **NEVER manually add duplicate entries** - Always check if a car already exists in the Available Cars section before adding
+* **Check for base model variants** - Cars like "M2 G87 (AT)" and "M2 G87 (MT)" share a base model; don't duplicate the base entry
+* **Match the description** from `ui_car.json` exactly when adding cars manually
+* **Automated workflow handles updates** - The GitHub Actions workflow automatically adds new cars from `ui_car.json`, so manual updates should be minimal
+
+### When Adding New Cars
+1. Create a SHORT description in `ui_car.json` (10-15 words max)
+2. Verify the car doesn't already exist in README.md
+3. If manually adding to README, use alphabetical order by year then name
+4. Use the format: `- **YEAR Name (Variant)** - Short description from ui_car.json`
+
+---
+
 ## Physics & Setup Notes
 
 These notes apply to all Assetto Corsa car configurations:
