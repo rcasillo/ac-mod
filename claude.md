@@ -22,7 +22,7 @@ If you require clarification on how specific settings, variables, or physics par
 ## Development Standards
 * **Encoding:** All configuration files must be saved in **UTF-8** (without BOM).
 * **Syntax:** Follow standard AC initialization formatting; ensure all brackets `[]` are properly closed.
-* **Vehicle Specifications:** When real-world vehicle specifications are discovered (engine specs, transmission details, suspension geometry, tire data, etc.), document them in the car-specific `claude.md` file within that car's directory. This creates a reference for future development and ensures consistency.
+* **Vehicle Specifications:** When real-world vehicle specifications are discovered (engine specs, transmission details, suspension geometry, tire data, etc.), document them in the car-specific `CLAUDE.md` file within that car's directory. This creates a reference for future development and ensures consistency.
 
 ---
 
@@ -61,4 +61,4 @@ These notes apply to all Assetto Corsa car configurations:
 
 * **Pickup Ride Height:** This value is only an offset for the car status screen in the setup menu. It does **not** affect physics.
 * **Static Camber (`suspensions.ini`):** The `STATIC_CAMBER` setting is a baseline value. The actual static camber is calculated based on suspension geometry and is displayed in the car status window in-game.
-* **Build Commands:** Use the `data/` folder for development; pack to `data.acd` only for release.
+* **Build Commands:** Use the `data/` folder for development.

@@ -9,6 +9,3 @@
 - **Torque:** 369 lb-ft @ 1,800-5,000 RPM
 - **Drivetrain:** xDrive AWD (all-wheel drive)
 - **Transmission:** 8-speed automatic
-
-## Installation
-See main repository README for installation instructions.

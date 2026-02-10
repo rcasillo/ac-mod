@@ -2,3 +2,6 @@ ASSETTO CORSA MODDING MANUAL 3.0_0.34revD.pdf
 
 # Claude Code local settings (user-specific permissions)
 .claude/settings.local.json
+
+# Packed data files (redundant - data/ folder is used instead)
+*.acd

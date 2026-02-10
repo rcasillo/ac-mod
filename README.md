@@ -29,8 +29,7 @@ All releases include:
 ### Method 2: Manual Installation
 1. Download the car zip file from [Releases](RELEASES.md)
 2. Extract to your Assetto Corsa directory: `assettocorsa/content/cars/`
-3. Open Content Manager, right-click the car, and select "Pack Data"
-4. The car will appear in your car list
+3. The car will appear in your car list
 
 ## ✨ Features
 

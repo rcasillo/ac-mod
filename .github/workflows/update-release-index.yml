@@ -90,7 +90,7 @@ jobs:
           print("\n---")
           print("\n### Installation\n")
           print("**Recommended Method:** Drag and drop the downloaded zip file onto Content Manager window.\n")
-          print("**Manual Method:** Extract to `assettocorsa/content/cars/` and pack data in Content Manager.\n")
+          print("**Manual Method:** Extract to `assettocorsa/content/cars/` — the car will appear in your car list.\n")
           print("\n---")
           print(f"\n*Last updated: {datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')} • [View All Releases](https://github.com/{repo_name}/releases)*")
 
