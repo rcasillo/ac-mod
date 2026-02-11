@@ -7,18 +7,17 @@ from pathlib import Path
 with open('README.md', 'r', encoding='utf-8') as f:
     readme_content = f.read()
 
-# Find all car directories
+# Find all car directories and build complete car list
 cars_dir = Path('cars')
 car_dirs = [d.name for d in cars_dir.iterdir() if d.is_dir()]
 
-# Track if we need to update
-cars_to_add = []
+cars_list = []
 
 for car_dir in sorted(car_dirs):
     ui_json_path = cars_dir / car_dir / 'ui' / 'ui_car.json'
 
     if not ui_json_path.exists():
-        print(f"⚠️  No ui_car.json found for {car_dir}, skipping")
+        print(f"WARNING: No ui_car.json found for {car_dir}, skipping")
         continue
 
     # Read car metadata
@@ -32,75 +31,41 @@ for car_dir in sorted(car_dirs):
     # Format display name as "Year Name" for GitHub display
     display_name = f"{car_year} {car_name}" if car_year else car_name
 
-    # Check if car is already in README's Available Cars section
-    available_cars_section = readme_content.split('## 🏎️ Available Cars')[1].split('##')[0] if '## 🏎️ Available Cars' in readme_content else ''
+    print(f"Found car: {display_name}")
+    cars_list.append({
+        'name': display_name,
+        'description': description,
+        'car_dir': car_dir
+    })
 
-    # More robust detection: normalize whitespace and check multiple patterns
-    def normalize(text):
-        return ' '.join(text.strip().split())
+# Sort cars alphabetically by name (handles year prefix correctly)
+cars_list.sort(key=lambda x: x['name'])
 
-    base_car_name = car_name.replace(' (AT)', '').replace(' (MT)', '').strip()
-    normalized_display = normalize(display_name)
-    already_exists = False
+# Build new Available Cars section content with links
+car_lines = [f"- **[{car['name']}](cars/{car['car_dir']}/CLAUDE.md)** - {car['description']}" for car in cars_list]
+new_cars_content = '\n'.join(car_lines)
 
-    for line in available_cars_section.split('\n'):
-        if line.strip().startswith('- **'):
-            normalized_line = normalize(line)
-            # Extract just the car name from line (between ** and **)
-            if '**' in normalized_line:
-                line_name = normalized_line.split('**')[1] if len(normalized_line.split('**')) > 1 else ''
-                # Check for exact match (year + name)
-                if normalized_display == normalize(line_name):
-                    already_exists = True
-                    print(f"✓ Car already in README: {display_name}")
-                    break
+# Find and replace the Available Cars section
+pattern = r'(## 🏎️ Available Cars\n\n)(.*?)(\n## )'
 
-    if not already_exists:
-        print(f"🆕 New car detected: {display_name}")
-        cars_to_add.append({
-            'name': display_name,
-            'description': description
-        })
+def replace_cars_section(match):
+    header = match.group(1)
+    current_content = match.group(2).strip()
+    next_section = match.group(3)
 
-if cars_to_add:
-    # Find the "Available Cars" section and update it
-    # Look for the pattern between "## 🏎️ Available Cars" and the next "##"
-    pattern = r'(## 🏎️ Available Cars\n\n)(.*?)(\n## )'
+    # Only update if content actually changed
+    if current_content == new_cars_content:
+        return match.group(0)  # No change needed
 
-    def replace_cars_section(match):
-        header = match.group(1)
-        current_content = match.group(2)
-        next_section = match.group(3)
+    return f"{header}{new_cars_content}{next_section}"
 
-        # Parse existing cars into a dict (keyed by normalized name for deduplication)
-        cars_dict = {}
-        for line in current_content.strip().split('\n'):
-            if line.startswith('- **'):
-                # Extract car name from between ** markers
-                if '**' in line and ' - ' in line:
-                    name_part = line.split('**')[1].strip()
-                    desc_part = line.split(' - ', 1)[1].strip() if ' - ' in line else ''
-                    # Use year+name as key for deduplication
-                    cars_dict[name_part] = {'name': name_part, 'description': desc_part}
+old_readme = readme_content
+readme_content = re.sub(pattern, replace_cars_section, readme_content, flags=re.DOTALL)
 
-        # Add new cars (won't duplicate due to dict keying)
-        for car in cars_to_add:
-            cars_dict[car['name']] = car
-
-        # Sort cars alphabetically by name (handles year prefix correctly)
-        sorted_cars = sorted(cars_dict.values(), key=lambda x: x['name'])
-
-        # Reconstruct section
-        car_lines = [f"- **{car['name']}** - {car['description']}" for car in sorted_cars]
-        new_content = '\n'.join(car_lines)
-        return f"{header}{new_content}{next_section}"
-
-    readme_content = re.sub(pattern, replace_cars_section, readme_content, flags=re.DOTALL)
-
-    # Write updated README
+# Only write if content changed
+if readme_content != old_readme:
     with open('README.md', 'w', encoding='utf-8') as f:
         f.write(readme_content)
-
-    print(f"✅ Added {len(cars_to_add)} new car(s) to README")
+    print(f"Updated README with {len(cars_list)} car(s)")
 else:
-    print("✅ README is up to date")
+    print("README is already up to date")

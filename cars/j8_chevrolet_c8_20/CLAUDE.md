@@ -11,6 +11,19 @@ This directory contains the specific assets and physics data for the **2020 Chev
 * **Drivetrain:** Rear-Wheel Drive (RWD)
 * **Layout:** Mid-engine, rear-wheel drive
 
+### Dimensions & Geometry
+* **Overall Length:** 4,630 mm
+* **Wheelbase:** 2,723 mm
+* **Overall Height:** 1,234 mm
+* **Frontal Area:** 2.02 m²
+* **Drag Coefficient:** Cd = 0.362
+
+### Aero Reference Heights (from ground)
+* **Ground Clearance:** ~130 mm (GM spec, Z51 package)
+* **Front Splitter Bottom Edge (Z51):** ~120-130 mm (at/near ground clearance)
+* **Rear Diffuser Exit:** ~180 mm (+50 mm above ground clearance)
+* **Sources:** GM official specs, C8 Corvette Forum owner measurements
+
 ---
 
 ## Z51 Package Specifics
