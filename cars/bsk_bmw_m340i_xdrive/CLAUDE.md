@@ -22,6 +22,12 @@ This directory contains the specific assets and physics data for the **2020+ BMW
 * **Frontal Area:** 2.25 m²
 * **Drag Coefficient:** Cd = 0.26 (BMW official specification)
 
+### Aero Reference Heights (from ground)
+* **Ground Clearance:** 130 mm (M Sport suspension)
+* **Front Bumper Lower Edge (center):** ~155 mm (+25 mm above ground clearance)
+* **Rear Diffuser/Exhaust Center:** ~260 mm (+130 mm above ground clearance)
+* **Sources:** BMW official specs, G80/G20 Bimmerpost owner measurements
+
 ### Wheels & Tires
 * **Wheel Size:** 19x9.0" (front and rear, squared setup)
 * **OEM Tire Size:** 255/35R19 (front and rear)

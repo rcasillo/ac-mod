@@ -10,6 +10,19 @@ This directory contains the specific assets and physics data for the **2023 BMW 
 * **Transmission:** 8-Speed Automatic (ZF 8HP76)
 * **Drivetrain:** Rear-Wheel Drive (RWD)
 
+### Dimensions & Geometry
+* **Overall Length:** 4,580 mm
+* **Wheelbase:** 2,747 mm
+* **Overall Height:** 1,403 mm
+* **Frontal Area:** 2.29 m²
+* **Drag Coefficient:** Cd = 0.34 (BMW official)
+
+### Aero Reference Heights (from ground)
+* **Ground Clearance:** 123 mm (BMW spec, lowest underbody point)
+* **Front Lip/Splitter Bottom Edge:** ~150 mm (+27 mm above ground clearance)
+* **Rear Diffuser Exit:** ~215 mm (+92 mm above ground clearance)
+* **Sources:** BMW official specs, Bimmerpost G87 owner measurements
+
 ---
 
 ## Research & Data Integrity
