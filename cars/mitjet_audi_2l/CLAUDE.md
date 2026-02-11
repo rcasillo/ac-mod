@@ -89,7 +89,7 @@ Approved for:
 ## Known Data Gaps
 * **Exact Torque Peak:** Multiple sources confirm 230 hp @ 7,500 RPM, but exact torque peak RPM and value not specified. Current curve scaled from stock Renault F4R 830 (197 hp) by factor of 1.168.
 * **Wheelbase:** Not specified in available sources. Dimension data shows overall length/width/height only.
-* **Exact Gear Ratios:** SADEV SL75 transmission confirmed, but individual ratios not published in available sources.
+* **Gear Ratios:** SADEV SL75 transmission confirmed with 8×31 (3.875:1) final drive from official SADEV documentation. Individual gear ratios are estimated/rescaled to preserve overall gearing feel while achieving correct top speed.
 * **Spring Rates:** Coilovers are adjustable; no factory baseline rates published.
 * **Aero Data:** No published downforce or drag coefficient data. Body is basic silhouette with minimal aero devices.
 
@@ -110,6 +110,12 @@ Approved for:
 * Scale factor: 1.168 (230/197)
 * Peak torque: ~251 Nm @ 5,000-5,500 RPM
 * Peak power anchor: 218.4 Nm @ 7,500 RPM (validated: 171.5 kW × 9549 / 7500 = 218.4 Nm)
+
+### Drivetrain (`drivetrain.ini`)
+* **Last Updated:** 2026-02-11
+* **Final Drive:** 3.875:1 (SADEV SL75 8×31 bevel gear option)
+* **Gear Ratios:** Rescaled to preserve overall gearing feel from gears 1-5, with 6th gear increased ~3.7% to achieve 220 km/h top speed
+* **Top Speed Calculation:** 7,500 RPM / 3.949 overall (6th) × 2π × 0.307m / 60 = 61.0 m/s = 220 km/h (137 mph)
 
 ### Suspension (`suspensions.ini`)
 * **Status:** Not yet verified against real specs
