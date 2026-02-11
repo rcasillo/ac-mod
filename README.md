@@ -8,6 +8,7 @@ High-quality car modifications for Assetto Corsa, featuring accurate physics, de
 - **[2020 Chevrolet Corvette C8 Stingray](cars/j8_chevrolet_c8_20/CLAUDE.md)** - Mid-engine American supercar with Z51 package aero parts and Extra A interior dome light
 - **[2023 BMW M2 G87 (AT)](cars/lew1x_bmw_m2_g87_at/CLAUDE.md)** - Compact high-performance coupe with S58 twin-turbo inline-six and ZF 8-speed automatic transmission
 - **[2023 BMW M2 G87 (MT)](cars/lew1x_bmw_m2_g87_mt/CLAUDE.md)** - Compact high-performance coupe with S58 twin-turbo inline-six and 6-speed manual transmission
+- **[Mitjet 2L](cars/mitjet_audi_2l/CLAUDE.md)** - FIA silhouette racer with Renault F4R 2.0L I4 and SADEV sequential gearbox
 ## 📦 Downloads
 
 **[📥 View Latest Releases](RELEASES.md)** - Download the newest version of each car
