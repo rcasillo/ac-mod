@@ -5,3 +5,7 @@ ASSETTO CORSA MODDING MANUAL 3.0_0.34revD.pdf
 
 # Packed data files (redundant - data/ folder is used instead)
 *.acd
+
+# Python cache directories
+__pycache__/
+*.pyc
