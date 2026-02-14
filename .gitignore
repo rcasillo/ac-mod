@@ -3,8 +3,8 @@ ASSETTO CORSA MODDING MANUAL 3.0_0.34revD.pdf
 # Claude Code local settings (user-specific permissions)
 .claude/settings.local.json
 
-# Packed data files (redundant - data/ folder is used instead)
-*.acd
+# Content Manager backup files (not needed for distribution)
+*_backup_cm.acd
 
 # Python cache directories
 __pycache__/

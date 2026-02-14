@@ -90,7 +90,7 @@ jobs:
             -x "*/claude.md" \
             -x "*/CLAUDE.md" \
             -x "*/README.md" \
-            -x "*.acd" \
+            -x "*_backup_cm.acd" \
             -x "*.DS_Store" \
             -x "*/__pycache__/*" \
             -x "*.pyc"
